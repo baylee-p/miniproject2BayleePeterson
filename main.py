@@ -2,7 +2,7 @@
 # Baylee Peterson
 # Mini Project 2
 
-# Import libraries
+import os
 import matplotlib.pyplot as plt
 import pandas as pd
 import requests
@@ -93,6 +93,10 @@ plt.ylabel("Temperature (°C)")
 plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()
+
+# Create charts directory if does not exist
+if not os.path.exists("charts"):
+    os.makedirs("charts")
 
 # Save the plot
 plt.savefig("charts/average_temperatures.png")
