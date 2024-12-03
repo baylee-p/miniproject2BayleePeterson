@@ -52,13 +52,13 @@ def process_weather_data(data):
     return df
 
 # Test processing
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     city = "New York City"
     date = "2024-11-01"
     data = fetch_weather_data(city, date)
     if data:
         df = process_weather_data(data)
-        print(df)
+        print(df)'''
 
 # List of cities
 cities = ["New York City", "Los Angeles", "Chicago", "Austin", "Phoenix"]
