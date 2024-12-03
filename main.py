@@ -38,16 +38,24 @@ def process_weather_data(data):
     # Extract relevant information
     forecast = data['forecast']['forecastday'][0]
     date = forecast['date']
-    avg_temp = forecast['day']['avgtemp_c']
-    max_temp = forecast['day']['maxtemp_c']
-    min_temp = forecast['day']['mintemp_c']
+    avg_temp_c = forecast['day']['avgtemp_c']
+    max_temp_c = forecast['day']['maxtemp_c']
+    min_temp_c = forecast['day']['mintemp_c']
 
-    # Create a DataFrame
+    # Convert Celsius to Fahrenheit
+    avg_temp_f = (avg_temp_c * 9/5) + 32
+    max_temp_f = (max_temp_c * 9/5) + 32
+    min_temp_f = (min_temp_c * 9/5) + 32
+
+    # Create a DataFrame with both Celsius and Fahrenheit
     df = pd.DataFrame({
         "Date": [date],
-        "Average Temp (°C)": [avg_temp],
-        "Max Temp (°C)": [max_temp],
-        "Min Temp (°C)": [min_temp]
+        "Average Temp (°C)": [avg_temp_c],
+        "Max Temp (°C)": [max_temp_c],
+        "Min Temp (°C)": [min_temp_c],
+        "Average Temp (°F)": [avg_temp_f],
+        "Max Temp (°F)": [max_temp_f],
+        "Min Temp (°F)": [min_temp_f],
     })
     return df
 
@@ -84,12 +92,12 @@ print(final_df)
 plt.figure(figsize=(12,6))
 for city in cities:
     city_data = final_df[final_df['City'] == city]
-    plt.plot(city_data["Date"], city_data["Average Temp (°C)"], label=city)
+    plt.plot(city_data["Date"], city_data["Average Temp (°F)"], label=city)
 
 # Customize plot
-plt.title("Average Temperatures from the first week of November 2024")
+plt.title("Average Temperatures from the first week of November 2024 (°F)")
 plt.xlabel("Date")
-plt.ylabel("Temperature (°C)")
+plt.ylabel("Temperature (°F)")
 plt.legend()
 plt.xticks(rotation=45)
 plt.tight_layout()
