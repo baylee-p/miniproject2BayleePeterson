@@ -26,12 +26,12 @@ def fetch_weather_data(city, date):
         return None
 
 # Test fetching data
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     city = "New York City"
     date = "2024-11-01"
     data = fetch_weather_data(city, date)
     if data:
-        print(data)
+        print(data)'''
 
 # Process the data into a Pandas DataFrame
 def process_weather_data(data):
