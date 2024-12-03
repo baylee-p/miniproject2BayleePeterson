@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 
 # Constants
-API_KEY = "230df5d4a2d84be387a00929240312" # Replace with your API Key
+API_KEY = "your_api_key_here" # Replace with your API Key
 BASE_URL = "http://api.weatherapi.com/v1/history.json"
 
 # Function to fetch weather data
