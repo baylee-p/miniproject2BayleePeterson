@@ -64,7 +64,7 @@ if __name__ == "__main__":
 cities = ["New York City", "Los Angeles", "Chicago", "Austin", "Phoenix"]
 
 # Dates in November
-dates = pd.date_range("2024-11-01", "2024-11-10").strftime("%Y-%m-%d")
+dates = pd.date_range("2024-11-01", "2024-11-07").strftime("%Y-%m-%d")
 
 # Collect Data
 all_data = []
@@ -87,7 +87,7 @@ for city in cities:
     plt.plot(city_data["Date"], city_data["Average Temp (°C)"], label=city)
 
 # Customize plot
-plt.title("Average Temperatures from November 1-10, 2024")
+plt.title("Average Temperatures from the first week of November 2024")
 plt.xlabel("Date")
 plt.ylabel("Temperature (°C)")
 plt.legend()
